@@ -2,8 +2,8 @@
 An application in order to apply steganography to images, using threads.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Amatofrancesco99/Steganography/blob/main/LICENSE)&emsp;
-![Java](https://img.shields.io/badge/backend-JAVA-red)&emsp;
-![Swing](https://img.shields.io/badge/frontend-JAVA_SWING-green)
+![Java](https://img.shields.io/badge/Backend-Java-red)&emsp;
+![Swing](https://img.shields.io/badge/Frontend-Java_Swing-green)
 
 ## Meaning
 Steganography is the practice of concealing a message within another message or a physical object.
