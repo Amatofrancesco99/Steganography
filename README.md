@@ -10,7 +10,7 @@ Steganography is the practice of concealing a message within another message or 
 In computing/electronic contexts, a computer file, message, image, or video is concealed within another file, message, image, or video.
 The word steganography comes from Greek _steganographia_, which combines the words _steganós (στεγανός)_, meaning _"covered or concealed"_, and _graphia (γραφή)_ meaning _"writing"_.
 
-With **least significant bit steganography**, the approach revolves around changing the least significant bit of each pixel's RGB values to match a corresponding bit in the message we want to encode. This way, the change is so small that the encoded image won't be noticably different to the naked eye from the original.
+With **least significant bit** steganography, the approach revolves around changing the least significant bit of each pixel's RGB values to match a corresponding bit in the message we want to encode. This way, the change is so small that the encoded image won't be noticably different to the naked eye from the original.
 
 ## Usage
 The application has a graphical user interface, which is developed with [_Java Swing_](https://www.javatpoint.com/java-swing).
