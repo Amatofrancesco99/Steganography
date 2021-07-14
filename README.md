@@ -20,4 +20,5 @@ If you choose:
    - choose the image on which steganography will be applied;
    - insert the name of the steganographed image;
    - add the _hidden message_. 
+   - all steganographed images will be saved by default in [steganographedImages](https://github.com/Amatofrancesco99/Steganography/tree/main/steganographedImages) folder
 - `DECODE` you can read the message from a steganographed image.
