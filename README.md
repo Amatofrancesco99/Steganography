@@ -10,3 +10,8 @@ In computing/electronic contexts, a computer file, message, image, or video is c
 The word steganography comes from Greek _steganographia_, which combines the words _steganós (στεγανός)_, meaning _"covered or concealed_", and _graphia (γραφή)_ meaning _"writing"_.
 
 ***
+
+## How to run this application
+
+
+***
