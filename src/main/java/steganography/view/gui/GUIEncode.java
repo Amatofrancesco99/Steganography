@@ -101,7 +101,7 @@ public class GUIEncode {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					String path = directory;
+					String path = "./steganographedImages";
 					String fileName = textField.getText();
 					@SuppressWarnings("deprecation")
 					String message = passwordField.getText();
@@ -113,11 +113,11 @@ public class GUIEncode {
 						JOptionPane.showMessageDialog(frmEncode, "Please insert a message" , "MessageException", JOptionPane.ERROR_MESSAGE);
 					}
 					else {
-						String filename = path + fileName;
+						String filename = directory;
 						File inFile = new File(filename);
 						BufferedImage initImage = null;
-					
 						initImage = ImageIO.read(inFile);
+						
 						String bitMsg = Encode.encodeMessage(message);
 						BufferedImage newImage = Encode.encodeImage(bitMsg,initImage);
 						
