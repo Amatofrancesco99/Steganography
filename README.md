@@ -1,7 +1,7 @@
 # Steganography
 An application in order to apply steganography to images, using threads.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)]()&emsp;
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Amatofrancesco99/Steganography/blob/main/LICENSE)&emsp;
 ![Java](https://img.shields.io/badge/backend-JAVA-red)&emsp;
 ![Swing](https://img.shields.io/badge/frontend-JAVA_SWING-green)
 
