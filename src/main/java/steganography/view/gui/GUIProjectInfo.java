@@ -11,6 +11,7 @@ import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 
 /**
@@ -42,14 +43,16 @@ public class GUIProjectInfo extends JDialog {
 	 * Create the dialog.
 	 */
 	public GUIProjectInfo() {
+		setResizable(false);
 		setTitle("Description");
-		setBounds(100, 100, 533, 340);
+		setBounds(100, 100, 544, 340);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		{
 			initMessage();
+			message.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 			message.setEditable(false);
 			JScrollPane scrollPane = new JScrollPane(message);
 			getContentPane().add(scrollPane, BorderLayout.CENTER);
@@ -60,6 +63,7 @@ public class GUIProjectInfo extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("Continue");
+				okButton.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						dialog.dispose();
@@ -85,32 +89,41 @@ public class GUIProjectInfo extends JDialog {
 	private void initMessage() {
 		message.setText(" Steganography Application \u00A9 \n"
 						
-						+ " This application has the aim to apply steganography to images, using threads."
+						+ "  This application has the aim to apply steganography to images, using threads."
 						+ "\n\n"
 				
 						
 						+ " Meaning\n"
-						
-						+ " Steganography is the practice of concealing a message within another message"
-						+ "\n or a physical object. In computing/electronic contexts, a computer file,"
-						+ "\n message, image, or video is concealed within another file, message, image,"
-						+ "\n or video. The word steganography comes from Greek steganographia, which"
-						+ "\n combines the words steganós (στεγανός), meaning \"covered or concealed\","
-						+ "\n and graphia (γραφή) meaning \"writing\".\n"
-						
-						+ "\n With least significant bit steganography, the approach revolves around"
-						+ "\n changing the least significant bit of each pixel's RGB values to match a"
-						+ "\n corresponding bit in the message we want to encode. This way, the change"
-						+ "\n is so small that the encoded image won't be noticably different to the"
-						+ "\n naked eye from the original."
-						+"\n\n"
+
+						+ "  Steganography is the practice of concealing a message within another message"
+						+ "\n  or a physical object. In computing/electronic contexts, a computer file, "
+						+ "\n  message, image, or video is concealed within another file, message, image, "
+						+ "\n  or video. The word steganography comes from Greek steganographia, which "
+						+ "\n  combines the words steganós (στεγανός), meaning \"covered or concealed\", "
+						+ "\n  and graphia (γραφή) meaning \"writing\".\n"
+						+ "\n"
+						+ "  With least significant bit steganography, the approach revolves around changing "
+						+ "\n  the least significant bit of each pixel's RGB values to match a corresponding "
+						+ "\n  bit in the message we want to encode. "
+						+ "\n  This way, the change is so small that the encoded image won't be noticably "
+						+ "\n  naked-eye different from the original.\n\n"
 						
 						
 						+ " Usage\n"
 		
+						+ "  The application is developed with Java Swing. If you choose: \n"
+						+ "   - ENCODE you can apply steganography to an image (hide the message). "
+						+ "\n    You have to:\n"
+						+ "       - choose the image on which steganography will be applied;\n"
+						+ "       - insert the name of the steganographed image;\n"
+						+ "       - add the hidden message;\n"
+						+ "       - all steganographed images will be saved by default in "
+						+ "\n         steganographedImages folder.\n"
+						+ "   - DECODE you can read the message from a steganographed image."
 						
-						+ "\n\n"
-						+ " Developed by: Francesco Amato, Francesco Minaglia & Filippo Maria Rognoni");
+						
+						+ "\n\n\n"
+						+ " Developed by: Francesco Amato, Francesco Minaglia and Filippo Maria Rognoni");
 	}
 
 }

@@ -8,6 +8,8 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
 
 /**
  * @author Francesco Amato
@@ -47,14 +49,18 @@ public class GUIMain {
 	 */
 	private void initialize() {
 		frmSteganography = new JFrame();
+		frmSteganography.setResizable(false);
 		frmSteganography.setTitle("Steganography");
-		frmSteganography.setBounds(100, 100, 260, 126);
+		frmSteganography.setBounds(100, 100, 300, 114);
 		frmSteganography.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		frmSteganography.getContentPane().add(panel, BorderLayout.CENTER);
 		
-		JButton btnNewButton = new JButton("Encode");
+		JButton btnNewButton = new JButton("ENCODE");
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setForeground(new Color(46, 139, 87));
+		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GUIEncode.main(null);
@@ -62,7 +68,9 @@ public class GUIMain {
 		});
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Decode");
+		JButton btnNewButton_1 = new JButton("DECODE");
+		btnNewButton_1.setForeground(new Color(220, 20, 60));
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GUIDecode.main(null);
@@ -74,6 +82,7 @@ public class GUIMain {
 		frmSteganography.getContentPane().add(panel_1, BorderLayout.SOUTH);
 		
 		JButton btnNewButton_2 = new JButton("Info");
+		btnNewButton_2.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GUIProjectInfo.main(null);

@@ -19,6 +19,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
 
 /**
  * @author Francesco Amato
@@ -59,17 +61,20 @@ public class GUIDecode {
 	 */
 	private void initialize() {
 		frmDecode = new JFrame();
+		frmDecode.setResizable(false);
 		frmDecode.setTitle("Decode");
-		frmDecode.setBounds(100, 100, 475, 117);
+		frmDecode.setBounds(100, 100, 302, 105);
 		frmDecode.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		frmDecode.getContentPane().add(panel, BorderLayout.CENTER);
 		
-		JLabel lblNewLabel = new JLabel("Choose the full path of the image file you want to decode");
+		JLabel lblNewLabel = new JLabel("Select the steganographed image");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		panel.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("Choose");
+		JButton btnNewButton = new JButton("Open");
+		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();
@@ -80,7 +85,9 @@ public class GUIDecode {
 		});
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Get the message");
+		JButton btnNewButton_1 = new JButton("GET THE MESSAGE");
+		btnNewButton_1.setForeground(new Color(220, 20, 60));
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {

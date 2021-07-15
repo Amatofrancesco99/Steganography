@@ -21,6 +21,8 @@ import javax.swing.JTextField;
 import main.java.steganography.model.Encode;
 
 import javax.swing.JPasswordField;
+import java.awt.Font;
+import java.awt.Color;
 
 /**
  * @author Francesco Amato
@@ -63,16 +65,19 @@ public class GUIEncode {
 	 */
 	private void initialize() {
 		frmEncode = new JFrame();
+		frmEncode.setResizable(false);
 		frmEncode.setTitle("Encode");
-		frmEncode.setBounds(100, 100, 486, 180);
+		frmEncode.setBounds(100, 100, 454, 168);
 		
 		JPanel panel = new JPanel();
 		frmEncode.getContentPane().add(panel, BorderLayout.CENTER);
 		
-		JLabel lblNewLabel = new JLabel("Choose the image path on which you'll apply steganography");
+		JLabel lblNewLabel = new JLabel("Choose the image on which you'll apply steganography");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		panel.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("Choose");
+		JButton btnNewButton = new JButton("Open");
+		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();
@@ -83,21 +88,25 @@ public class GUIEncode {
 		});
 		panel.add(btnNewButton);
 	
-		JLabel lblNewLabel_1 = new JLabel("Enter steganographed image file name");
+		JLabel lblNewLabel_1 = new JLabel("Insert the steganographed image file name");
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		panel.add(lblNewLabel_1);
 		
 		textField = new JTextField();
 		panel.add(textField);
-		textField.setColumns(14);
+		textField.setColumns(13);
 		
 		JLabel lblNewLabel_2 = new JLabel("Enter the message you want to encode");
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		panel.add(lblNewLabel_2);
 		
 		passwordField = new JPasswordField();
 		passwordField.setColumns(15);
 		panel.add(passwordField);
 		
-		JButton btnNewButton_1 = new JButton("Encode");
+		JButton btnNewButton_1 = new JButton("ENCODE");
+		btnNewButton_1.setForeground(new Color(46, 139, 87));
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
