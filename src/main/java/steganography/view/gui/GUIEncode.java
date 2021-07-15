@@ -122,7 +122,6 @@ public class GUIEncode {
 						JOptionPane.showMessageDialog(frmEncode, "Please insert a message" , "MessageException", JOptionPane.ERROR_MESSAGE);
 					}
 					else {
-						System.out.println(directory);
 						String filename = directory;
 						File inFile = new File(filename);
 						BufferedImage initImage = null;
