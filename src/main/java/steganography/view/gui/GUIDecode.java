@@ -75,7 +75,7 @@ public class GUIDecode {
 				JFileChooser fileChooser = new JFileChooser();
 				fileChooser.showOpenDialog(panel);
 				if (fileChooser.getSelectedFile() != null)
-					steganographedImage = fileChooser.getCurrentDirectory().toString() + fileChooser.getSelectedFile().toString();
+					steganographedImage = fileChooser.getSelectedFile().toString();
 			}
 		});
 		panel.add(btnNewButton);

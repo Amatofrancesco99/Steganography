@@ -78,7 +78,7 @@ public class GUIEncode {
 				JFileChooser fileChooser = new JFileChooser();
 				fileChooser.showOpenDialog(panel);
 				if (fileChooser.getSelectedFile() != null)
-					directory = fileChooser.getCurrentDirectory().toString() + fileChooser.getSelectedFile().toString();
+					directory =  fileChooser.getSelectedFile().toString();
 			}
 		});
 		panel.add(btnNewButton);
@@ -113,6 +113,7 @@ public class GUIEncode {
 						JOptionPane.showMessageDialog(frmEncode, "Please insert a message" , "MessageException", JOptionPane.ERROR_MESSAGE);
 					}
 					else {
+						System.out.println(directory);
 						String filename = directory;
 						File inFile = new File(filename);
 						BufferedImage initImage = null;
