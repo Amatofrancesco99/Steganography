@@ -1,6 +1,5 @@
 package main.java.steganography.view.gui;
 
-import java.awt.EventQueue;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -36,23 +35,7 @@ public class GUIEncode {
 	private JPasswordField passwordField;
 	private String directory;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUIEncode window = new GUIEncode();
-					window.frmEncode.setVisible(true);
-					window.frmEncode.setLocationRelativeTo(null);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	
 	/**
 	 * Create the application.
 	 */
@@ -141,5 +124,7 @@ public class GUIEncode {
 			}
 		});
 		panel.add(btnNewButton_1);
+		frmEncode.setVisible(true);
+		frmEncode.setLocationRelativeTo(null);
 	}
 }

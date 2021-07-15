@@ -1,6 +1,5 @@
 package main.java.steganography.view.gui;
 
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -32,22 +31,6 @@ public class GUIDecode {
 	private JFrame frmDecode;
 	private String steganographedImage;
 	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUIDecode window = new GUIDecode();
-					window.frmDecode.setVisible(true);
-					window.frmDecode.setLocationRelativeTo(null);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -105,6 +88,8 @@ public class GUIDecode {
 			}
 		});
 		panel.add(btnNewButton_1);
+		frmDecode.setVisible(true);
+		frmDecode.setLocationRelativeTo(null);
 	}
 
 }

@@ -63,7 +63,7 @@ public class GUIMain {
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GUIEncode.main(null);
+				new GUIEncode();
 			}
 		});
 		panel.add(btnNewButton);
@@ -73,7 +73,7 @@ public class GUIMain {
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GUIDecode.main(null);
+				new GUIDecode();
 			}
 		});
 		panel.add(btnNewButton_1);
@@ -85,7 +85,7 @@ public class GUIMain {
 		btnNewButton_2.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GUIProjectInfo.main(null);
+				new GUIProjectInfo();
 			}
 		});
 		panel_1.add(btnNewButton_2);

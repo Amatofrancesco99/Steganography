@@ -23,21 +23,8 @@ import java.awt.Font;
 public class GUIProjectInfo extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private static GUIProjectInfo dialog = new GUIProjectInfo();
 	private JTextPane message = new JTextPane();
 	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-			dialog.setLocationRelativeTo(null);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * Create the dialog.
@@ -66,7 +53,7 @@ public class GUIProjectInfo extends JDialog {
 				okButton.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						dialog.dispose();
+						dispose();
 					}
 				});
 				okButton.setActionCommand("Continue");
@@ -83,6 +70,13 @@ public class GUIProjectInfo extends JDialog {
 				cancelButton.setActionCommand("Exit");
 				buttonPane.add(cancelButton);
 			}
+		}
+		try {
+			this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			this.setVisible(true);
+			this.setLocationRelativeTo(null);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 

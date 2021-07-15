@@ -1,6 +1,5 @@
 package main.java.steganography.model;
 
-import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 /**
@@ -39,23 +38,16 @@ public final class Decode {
 
 	public final static String decodeMessage(BufferedImage image) {
 		StringBuilder sb = new StringBuilder();
-
+		
+		DecodeThread[] dt = new DecodeThread[image.getWidth()];
 		for (int x = 0; x < image.getWidth(); x++) {
-			for (int y = 0; y < image.getHeight(); y++) {
-				Color c = new Color(image.getRGB(x,y)); //color of pixel
-				byte r = (byte) c.getRed(); //split into red
-				byte g = (byte) c.getGreen(); //split into green 
-				byte b = (byte) c.getBlue(); //split into blue
-				byte[] RGB = {r, g, b};
-				
-				for (int i = 0; i < 3; i++) {
-					if ((RGB[i] & 1) == 1) { //LSB is a 1
-						sb.append("1");
-					} else { //else it is a 0
-						sb.append("0");
-					}
-				}
-			}
+			System.out.println("\nParte il thread: " + x);
+			dt[x] = new DecodeThread(image,x);
+			dt[x].start();
+		}
+		
+		for (int x = 0; x < image.getWidth(); x++) {
+			sb.append(dt[x].getSb());
 		}
 		
 		return sb.toString();
