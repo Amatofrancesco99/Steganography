@@ -45,15 +45,13 @@ public final class Encode {
 	 * in encoding process. There is a thread for every image column that realizes the encoding process
 	 */
 	public final static BufferedImage encodeImage (String bit, BufferedImage image) throws MessageTooLongForChosenImageException {
-		System.out.println(((image.getWidth()*image.getHeight()) * 3) - 1);
 		if (bit.length() > (((image.getWidth()*image.getHeight()) * 3) - 1))
 			throw new MessageTooLongForChosenImageException();
 		int pointer = bit.length()-1; //bit string pointer
 		for (int x = image.getWidth()-1; x >= 0; x--) {
 			EncodeThread et = new EncodeThread(x, pointer, bit, image);
 			et.start();
-			pointer = pointer - image.getHeight();
-			
+			pointer = pointer - image.getHeight() * 3;
 		}
 		return image;
 	}
