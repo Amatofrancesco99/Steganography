@@ -41,7 +41,7 @@ public final class Decode {
 		
 		DecodeThread[] dt = new DecodeThread[image.getWidth()];
 		for (int x = 0; x < image.getWidth(); x++) {
-			System.out.println("\nParte il thread: " + x);
+			System.out.println("\nParte il thread di decode: " + x);
 			dt[x] = new DecodeThread(image,x);
 			dt[x].start();
 		}
