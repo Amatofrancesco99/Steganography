@@ -33,7 +33,7 @@ public class GUIProjectInfo extends JDialog {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(GUIProjectInfo.class.getResource("/main/java/steganography/view/gui/resources/logo.png")));
 		setResizable(false);
 		setTitle("Description");
-		setBounds(100, 100, 544, 340);
+		setBounds(100, 100, 552, 340);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
