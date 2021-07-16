@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 /**
  * @author Francesco Amato
@@ -44,9 +45,10 @@ public class GUIDecode {
 	 */
 	private void initialize() {
 		frmDecode = new JFrame();
+		frmDecode.setIconImage(Toolkit.getDefaultToolkit().getImage(GUIDecode.class.getResource("/main/java/steganography/view/gui/resources/logo.png")));
 		frmDecode.setResizable(false);
 		frmDecode.setTitle("Decode");
-		frmDecode.setBounds(100, 100, 302, 105);
+		frmDecode.setBounds(100, 100, 310, 116);
 		frmDecode.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
@@ -57,7 +59,7 @@ public class GUIDecode {
 		panel.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Open");
-		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();

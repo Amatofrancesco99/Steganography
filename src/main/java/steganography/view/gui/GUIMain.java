@@ -4,12 +4,17 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
+
 import java.awt.BorderLayout;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 /**
  * @author Francesco Amato
@@ -27,6 +32,9 @@ public class GUIMain {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+					JFrame.setDefaultLookAndFeelDecorated(true);
+					JDialog.setDefaultLookAndFeelDecorated(true);
 					GUIMain window = new GUIMain();
 					window.frmSteganography.setVisible(true);
 					window.frmSteganography.setLocationRelativeTo(null);
@@ -49,16 +57,16 @@ public class GUIMain {
 	 */
 	private void initialize() {
 		frmSteganography = new JFrame();
+		frmSteganography.setIconImage(Toolkit.getDefaultToolkit().getImage(GUIMain.class.getResource("/main/java/steganography/view/gui/resources/logo.png")));
 		frmSteganography.setResizable(false);
 		frmSteganography.setTitle("Steganography");
-		frmSteganography.setBounds(100, 100, 300, 114);
+		frmSteganography.setBounds(100, 100, 315, 120);
 		frmSteganography.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		frmSteganography.getContentPane().add(panel, BorderLayout.CENTER);
 		
 		JButton btnNewButton = new JButton("ENCODE");
-		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setForeground(new Color(46, 139, 87));
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton.addActionListener(new ActionListener() {

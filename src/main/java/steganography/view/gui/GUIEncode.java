@@ -23,6 +23,7 @@ import main.java.steganography.model.util.MessageTooLongForChosenImageException;
 import javax.swing.JPasswordField;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 /**
  * @author Francesco Amato
@@ -36,7 +37,6 @@ public class GUIEncode {
 	private JPasswordField passwordField;
 	private String directory;
 
-	
 	/**
 	 * Create the application.
 	 */
@@ -49,6 +49,7 @@ public class GUIEncode {
 	 */
 	private void initialize() {
 		frmEncode = new JFrame();
+		frmEncode.setIconImage(Toolkit.getDefaultToolkit().getImage(GUIEncode.class.getResource("/main/java/steganography/view/gui/resources/logo.png")));
 		frmEncode.setResizable(false);
 		frmEncode.setTitle("Encode");
 		frmEncode.setBounds(100, 100, 454, 168);
@@ -61,7 +62,7 @@ public class GUIEncode {
 		panel.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Open");
-		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();

@@ -12,7 +12,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
-
+import java.awt.Toolkit;
 
 /**
  * @author Francesco Amato
@@ -30,6 +30,7 @@ public class GUIProjectInfo extends JDialog {
 	 * Create the dialog.
 	 */
 	public GUIProjectInfo() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(GUIProjectInfo.class.getResource("/main/java/steganography/view/gui/resources/logo.png")));
 		setResizable(false);
 		setTitle("Description");
 		setBounds(100, 100, 544, 340);
