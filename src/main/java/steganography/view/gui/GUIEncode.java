@@ -61,6 +61,7 @@ public class GUIEncode {
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		panel.add(lblNewLabel);
 		
+		//This button allows to select an image to be steganographed, and it saves the file path into a variable
 		JButton btnNewButton = new JButton("Open");
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnNewButton.addActionListener(new ActionListener() {
@@ -89,6 +90,8 @@ public class GUIEncode {
 		passwordField.setColumns(15);
 		panel.add(passwordField);
 		
+		//This button allows to apply steganography technique to the chosen image adding the message written previously.
+		//The steganographed image will be saved in the "steganographedImages" folder with the name typed above
 		JButton btnNewButton_1 = new JButton("ENCODE");
 		btnNewButton_1.setForeground(new Color(46, 139, 87));
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -125,7 +128,7 @@ public class GUIEncode {
 					JOptionPane.showMessageDialog(frmEncode, exception.getMessage() , "IOException", JOptionPane.ERROR_MESSAGE);
 				} catch (MessageTooLongForChosenImageException exception) {
 					JOptionPane.showMessageDialog(frmEncode, exception.getMessage() , "ImageException", JOptionPane.ERROR_MESSAGE);
-					message = "";
+					passwordField.setText("");
 					directory = null;
 				} catch (NullPointerException exception) {
 					JOptionPane.showMessageDialog(frmEncode, "Please choose an image on which apply steganography" , "ImageException", JOptionPane.ERROR_MESSAGE);

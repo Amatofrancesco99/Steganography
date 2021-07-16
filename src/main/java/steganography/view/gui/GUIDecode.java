@@ -58,6 +58,7 @@ public class GUIDecode {
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		panel.add(lblNewLabel);
 		
+		//This button allows to select a steganographed image, and it saves the file path into a variable
 		JButton btnNewButton = new JButton("Open");
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnNewButton.addActionListener(new ActionListener() {
@@ -70,6 +71,7 @@ public class GUIDecode {
 		});
 		panel.add(btnNewButton);
 		
+		//This button allows to decode the steganographed image in order to obtain the hidden message
 		JButton btnNewButton_1 = new JButton("GET THE MESSAGE");
 		btnNewButton_1.setForeground(new Color(220, 20, 60));
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 18));

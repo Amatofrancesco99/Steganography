@@ -7,9 +7,17 @@ import java.awt.image.BufferedImage;
  * @author Francesco Minaglia
  * @author Filippo Maria Rognoni
  *
+ * This class manages the decoding functions of the steganography process
  */
 public final class Decode {
 
+	/**
+	 * 
+	 * @param encoded
+	 * @return fin
+	 * 
+	 * This method converts the bits of the hidden message into a String
+	 */
 	public final static String getMessage (String encoded) {
 		int count = encoded.length()-1;
 		StringBuilder message = new StringBuilder();
@@ -35,6 +43,15 @@ public final class Decode {
 		return fin;
 	} 
 
+	/**
+	 * 
+	 * @param image
+	 * @return sb
+	 * 
+	 * This method extracts the bits of the hidden message contained into the manipulated image.
+	 * In this section of the code, threads are used in order to have better performance
+	 * in decoding process. There is a thread for every image column that realizes the decoding process
+	 */
 	public final static String decodeMessage(BufferedImage image) {
 		StringBuilder sb = new StringBuilder();
 		DecodeThread[] dt = new DecodeThread[image.getWidth()];

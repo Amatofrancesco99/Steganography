@@ -3,12 +3,28 @@ package main.java.steganography.model;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
+/**
+ * @author Francesco Amato
+ * @author Francesco Minaglia
+ * @author Filippo Maria Rognoni
+ *
+ * This class manages the encoding threads functions
+ */
 public class EncodeThread extends Thread{
 	
 	int x, pointer;
 	String bit;
 	BufferedImage image;
 	
+	/**
+	 * 
+	 * @param x
+	 * @param pointer
+	 * @param bit
+	 * @param image
+	 * 
+	 * The constructor gets as inputs the image column, a pointer for the status of the conversion, the message and the image
+	 */
 	public EncodeThread(int x, int pointer, String bit, BufferedImage image) {
 		this.x = x;
 		this.pointer = pointer;
@@ -17,6 +33,9 @@ public class EncodeThread extends Thread{
 	}
 	
 	@Override
+	/**
+	 * This method assigns to the less significant bit of the RGB image spectrum, three bits of the message
+	 */
 	public void run() {
 		for (int y = image.getHeight()-1; y >= 0; y--) { //for each pixel
 			Color c = new Color(image.getRGB(x,y)); //color of pixel

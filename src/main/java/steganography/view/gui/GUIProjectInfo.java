@@ -27,7 +27,7 @@ public class GUIProjectInfo extends JDialog {
 	
 
 	/**
-	 * Create the dialog.
+	 * Create the info dialog of the program
 	 */
 	public GUIProjectInfo() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(GUIProjectInfo.class.getResource("/main/java/steganography/view/gui/resources/logo.png")));
