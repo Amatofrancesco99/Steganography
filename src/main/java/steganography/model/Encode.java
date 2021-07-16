@@ -26,8 +26,8 @@ public final class Encode {
 	}
 	
 	public final static BufferedImage encodeImage (String bit, BufferedImage image) throws MessageTooLongForChosenImageException {
-		if (bit.length() > (image.getWidth()*image.getHeight()/8))
-			throw new MessageTooLongForChosenImageException("The inserted message is too long for the chosen image");
+		if (bit.length() > (((image.getWidth()*image.getHeight())/8)-1))
+			throw new MessageTooLongForChosenImageException();
 		int pointer = bit.length()-1; //bit string pointer
 		for (int x = image.getWidth()-1; x >= 0; x--) {
 			EncodeThread et = new EncodeThread(x, pointer, bit, image);
