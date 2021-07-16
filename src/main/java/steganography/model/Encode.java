@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.math.BigInteger;
 
+import main.java.steganography.model.util.SteganographyException;
+
 /**
  * @author Francesco Amato
  * @author Francesco Minaglia
@@ -26,7 +28,11 @@ public final class Encode {
 		return bitString;
 	}
 	
-	public final static BufferedImage encodeImage (String bit, BufferedImage image) {
+	public final static BufferedImage encodeImage (String bit, BufferedImage image) throws SteganographyException {
+		
+		if (bit.length() > (image.getWidth()*image.getHeight()/8))
+			throw new SteganographyException("The inserted message is too long for the chosen image");
+		
 		int pointer = bit.length()-1; //bit string pointer
 		
 		for (int x = image.getWidth()-1; x >= 0; x--) {

@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 
 import main.java.steganography.model.Encode;
+import main.java.steganography.model.util.SteganographyException;
 
 import javax.swing.JPasswordField;
 import java.awt.Font;
@@ -91,12 +92,13 @@ public class GUIEncode {
 		btnNewButton_1.setForeground(new Color(46, 139, 87));
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_1.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
+				String message;
 				try {
 					String path = "./steganographedImages";
 					String fileName = textField.getText();
-					@SuppressWarnings("deprecation")
-					String message = passwordField.getText();
+					message = passwordField.getText();
 				
 					if (fileName.length() == 0) {
 						JOptionPane.showMessageDialog(frmEncode, "Please insert the name of the image that will be steganographed" , "InexistentFileNameException", JOptionPane.ERROR_MESSAGE);
@@ -120,6 +122,12 @@ public class GUIEncode {
 					}
 				} catch (IOException exception) {
 					JOptionPane.showMessageDialog(frmEncode, exception.getMessage() , "IOException", JOptionPane.ERROR_MESSAGE);
+				} catch (SteganographyException exception) {
+					JOptionPane.showMessageDialog(frmEncode, exception.getMessage() , "ImageException", JOptionPane.ERROR_MESSAGE);
+					message = "";
+					directory = null;
+				} catch (NullPointerException exception) {
+					JOptionPane.showMessageDialog(frmEncode, "Please choose an image on which apply steganography" , "ImageException", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
