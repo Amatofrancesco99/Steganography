@@ -32,23 +32,19 @@ public final class Decode {
 			
 		}
 		String fin = new String(ba);
-		
 		return fin;
 	} 
 
 	public final static String decodeMessage(BufferedImage image) {
 		StringBuilder sb = new StringBuilder();
-		
 		DecodeThread[] dt = new DecodeThread[image.getWidth()];
 		for (int x = 0; x < image.getWidth(); x++) {
 			dt[x] = new DecodeThread(image,x);
 			dt[x].start();
 		}
-		
 		for (int x = 0; x < image.getWidth(); x++) {
 			sb.append(dt[x].getSb());
 		}
-		
 		return sb.toString();
 	}
 

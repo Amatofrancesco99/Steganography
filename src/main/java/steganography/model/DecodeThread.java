@@ -11,7 +11,6 @@ public class DecodeThread extends Thread{
 	
 	
 	public DecodeThread(BufferedImage image, int x) {
-		
 		this.x = x;
 		this.image = image;
 	}
@@ -45,4 +44,5 @@ public class DecodeThread extends Thread{
 		}
 		return sb;	
 	}
+	
 }

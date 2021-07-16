@@ -18,7 +18,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 
 import main.java.steganography.model.Encode;
-import main.java.steganography.model.util.SteganographyException;
+import main.java.steganography.model.util.MessageTooLongForChosenImageException;
 
 import javax.swing.JPasswordField;
 import java.awt.Font;
@@ -122,7 +122,7 @@ public class GUIEncode {
 					}
 				} catch (IOException exception) {
 					JOptionPane.showMessageDialog(frmEncode, exception.getMessage() , "IOException", JOptionPane.ERROR_MESSAGE);
-				} catch (SteganographyException exception) {
+				} catch (MessageTooLongForChosenImageException exception) {
 					JOptionPane.showMessageDialog(frmEncode, exception.getMessage() , "ImageException", JOptionPane.ERROR_MESSAGE);
 					message = "";
 					directory = null;
