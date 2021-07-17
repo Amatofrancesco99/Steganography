@@ -68,8 +68,10 @@ public class GUIEncode {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();
 				fileChooser.showOpenDialog(panel);
-				if (fileChooser.getSelectedFile() != null)
+				if (fileChooser.getSelectedFile() != null) {
 					directory =  fileChooser.getSelectedFile().toString();
+					JOptionPane.showMessageDialog(frmEncode, "Image has been selected" , "ImageSelected", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		});
 		panel.add(btnNewButton);
